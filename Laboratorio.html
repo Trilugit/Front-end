@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Telefónica</title>
+    <link rel="stylesheet" type="text/css" href="Estilo.css">
+    <script src="main.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <h1>Formulario Información Alta Telefónica</h1>
+
+    <form action="#" name="telefonica">
+
+        <fieldset class="cajas">
+            <legend class="titulos">Datos Personales</legend>
+            Nombre: <input type="text" name="nombre" maxlength="30" class="relleno"/><br />
+            Apellidos: <input type="text" name="apellidos" maxlength="60" class="relleno"/><br />
+            Dirección: <input type="text" name="direccion" maxlength="60" class="relleno"/><br />
+            Codigo Postal: <input type="text" id="cpostal" name="cpostal" pattern="[0-9]{5}" class="relleno"/><br />
+            Localidad: <input type="text" id="localidad" name="localidad" class="relleno"/><br/>
+        </fieldset><br/>
+
+        <fieldset class="cajas">
+            <legend class="titulos">Tipo de Contratación</legend>
+            <input type="radio" name="tipoc" value="nuevo" checked="checked">Nueva Contratación &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="tipoc" value="porta">Portabilidad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="tipoc" value="cambio">Cambio de Contrato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/><br />
+            Elija la compañía actual:
+                <select name="origen">
+                    <option value="movistar">Movistar</option>
+                    <option value="orange">Orange</option>
+                    <option value="vodafone">Vodafone</option>
+                    <option value="yoigo">Yoigo</option>
+                    <option value="ninguna">No tengo ninguna compañía</option>
+                </select> 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            En caso de portabilidad, elija la nueva compañía:
+                <select name="origen">
+                    <option value="movistar">Movistar</option>
+                    <option value="orange">Orange</option>
+                    <option value="vodafone">Vodafone</option>
+                    <option value="yoigo">Yoigo</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;               
+        </fieldset><br/>
+
+        <fieldset class="cajas">
+            <legend class="titulos">Datos Bancarios</legend>
+            País: <input type="text" id="pais" name="pais" value="ES" readonly="readonly" class="relleno"/> (sólo válido ES)<br />
+            Control IBAN: <input type="text" id="ciban" name="ciban" placeholder="XX" pattern="[0-9]{2}" class="relleno"/> (dos dígitos)<br />
+            Entidad: <input type="text" id="enti" name="enti" placeholder="XXXX" pattern="[0-9]{4}" class="relleno"/> (cuatro dígitos)<br />
+            Sucursal: <input type="text" id="suc" name="suc" placeholder="XXXX" pattern="[0-9]{4}" class="relleno"/> (cuatro dígitos)<br />
+            DC: <input type="text" id="dc" name="dc" placeholder="XX" pattern="[0-9]{2}" class="relleno"/> (dos dígitos)<br />
+            Cuenta: <input type="text" id="cuenta" name="cuenta" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" class="relleno"/> (diez dígitos)<br />
+        </fieldset><br/>
+
+        <fieldset class="cajas">
+            <legend class="titulos">Datos Estadísticos - ¿Cómo nos conoció?</legend>
+            <input type="checkbox" id="check" value="tv">A través de la TV<br/>
+            <input type="checkbox" id="check" value="radio">A través de la radio<br/>
+            <input type="checkbox" id="check" value="internet">A través de la Internet<br/>
+            <input type="checkbox" id="check" value="otros">Otros<br/><br/>
+            <input type="range" name="valor" id="val" min="1" max="4"/> Valoración [1-4]<br/><br/>
+            Fecha de la encuesta: <input type="date" id="date" name="fecha" value="2019-01-01"/>
+        </fieldset>
+
+        <input type="submit" value="Enviar Datos" onclick="send_data()"/>
+        <input type="reset" value="Borrar Datos" /><br/>
+        <button type="button" id="valor" class="botones" onclick="valoracion();" value="">Mostrar<br/>Valoración</button>
+        <button type="button" class="botones" onclick="cuent()">Mostrar<br/>Cuenta</button>
+        <button type="button" class="botones" onclick="diasemana()">Mostrar Día<br/>Semana</button>
+
+    </form>
+
+    <div class="alert" id="error_alert" style="display: none;">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Error al introducir datos.
+    </div> 
+    
+    <div class="alert-true" id="true_alert" style="display: none;">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Genial, datos correctos ;)
+    </div> 
+</body>
+</html>

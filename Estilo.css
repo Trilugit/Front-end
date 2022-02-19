@@ -1,0 +1,66 @@
+.titulos {
+    background-color: #ff0000;
+    color: white;
+}
+
+.cajas {
+    background-color: #00ffff;
+    border-radius: 5px;
+}
+
+.relleno {
+    background-color: #ffff00;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #0000ff;
+}
+
+.botones {
+    background-color: #ffc0cb;
+    border-radius: 5px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  .alert-true {
+    padding: 20px;
+    background-color: #3cf436;
+    color: rgb(0, 0, 0);
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
